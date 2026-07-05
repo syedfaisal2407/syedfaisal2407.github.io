@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Faisal Ahamed Syed — SOC Analyst & Security Engineer</title>
+<meta name="description" content="Faisal Ahamed Syed — Cybersecurity graduate (M.S., Auburn University at Montgomery), Security+ certified SOC analyst. SIEM monitoring, threat hunting, vulnerability management, network security." />
+<meta property="og:title" content="Faisal Ahamed Syed — SOC Analyst & Security Engineer" />
+<meta property="og:description" content="Security+ certified SOC analyst. SIEM, threat hunting, MITRE ATT&CK, vulnerability management." />
+<style>
+  :root{
+    --paper:#F0F3F6;
+    --card:#FFFFFF;
+    --ink:#0F1A26;
+    --ink-soft:#4A5A6D;
+    --line:#D3DCE5;
+    --signal:#1D5BD8;
+    --signal-dark:#143F99;
+    --green:#176E3F;
+    --green-bg:#E7F3EC;
+    --amber:#B45309;
+    --amber-bg:#FDF2E3;
+    --mono:ui-monospace,'SF Mono','Cascadia Code',Menlo,Consolas,monospace;
+    --sans:'Avenir Next','Segoe UI',system-ui,-apple-system,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:16px}
+  a{color:var(--signal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+  /* ---- top bar ---- */
+  header{background:var(--card);border-bottom:2px solid var(--ink);position:sticky;top:0;z-index:10}
+  .bar{display:flex;align-items:center;gap:14px;padding:14px 0;flex-wrap:wrap}
+  .tag{font-family:var(--mono);font-size:12px;background:var(--ink);color:#fff;padding:3px 9px;border-radius:3px;letter-spacing:.08em}
+  nav{margin-left:auto;display:flex;gap:18px;font-family:var(--mono);font-size:12.5px}
+  nav a{color:var(--ink-soft)}
+  nav a:hover{color:var(--signal);text-decoration:none}
+
+  /* ---- hero: triage feed ---- */
+  .hero{padding:64px 0 48px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
+  h1{font-size:clamp(34px,6vw,56px);line-height:1.06;font-weight:700;letter-spacing:-0.015em}
+  h1 .accent{color:var(--signal)}
+  .sub{margin-top:18px;max-width:640px;color:var(--ink-soft);font-size:17px}
+  .feed{margin-top:30px;background:var(--ink);border-radius:8px;padding:16px 18px;font-family:var(--mono);font-size:13px;color:#C8D6E5;overflow:hidden}
+  .feed .ln{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:2px 0}
+  .feed .ok{color:#5BD78F}
+  .feed .k{color:#7FB0FF}
+  .feed .cursor{display:inline-block;width:8px;height:14px;background:#5BD78F;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .cta-row{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;font-size:14.5px}
+  .btn-primary{background:var(--signal);color:#fff}
+  .btn-primary:hover{background:var(--signal-dark);text-decoration:none}
+  .btn-ghost{border:1px solid var(--line);background:var(--card);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--signal);color:var(--signal);text-decoration:none}
+
+  /* ---- sections ---- */
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+  .sec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* stats strip */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px}
+  .stat b{display:block;font-family:var(--mono);font-size:26px;color:var(--signal);font-weight:700}
+  .stat span{font-size:12.5px;color:var(--ink-soft)}
+
+  /* experience */
+  .role{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:16px}
+  .role-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+  .role h3{font-size:17.5px}
+  .role .org{color:var(--ink-soft);font-size:14px}
+  .role .when{font-family:var(--mono);font-size:12px;color:var(--ink-soft);background:var(--paper);padding:3px 9px;border-radius:4px}
+  .role ul{margin:12px 0 0 18px}
+  .role li{font-size:14.5px;padding:3px 0;color:var(--ink)}
+  .role li::marker{color:var(--signal)}
+
+  /* projects */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr}}
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column}
+  .proj h3{font-size:16px;margin-bottom:6px}
+  .proj p{font-size:13.5px;color:var(--ink-soft);flex:1}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .chip{font-family:var(--mono);font-size:11px;background:var(--paper);color:var(--ink-soft);border:1px solid var(--line);padding:3px 8px;border-radius:4px}
+  .proj a.repo{font-family:var(--mono);font-size:12px;margin-top:12px}
+
+  /* skills */
+  .skill-row{display:grid;grid-template-columns:170px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:start}
+  @media(max-width:560px){.skill-row{grid-template-columns:1fr}}
+  .skill-row .cat{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);padding-top:3px}
+  .skill-row .vals{font-size:14px}
+
+  /* certs */
+  .certs{display:flex;gap:12px;flex-wrap:wrap}
+  .cert{background:var(--green-bg);color:var(--green);font-weight:600;font-size:13.5px;padding:9px 14px;border-radius:6px;border:1px solid #BFE2CC}
+  .cert.pending{background:var(--amber-bg);color:var(--amber);border-color:#F0D6AE}
+
+  /* footer / contact */
+  footer{border-top:2px solid var(--ink);background:var(--card);padding:36px 0 48px;margin-top:44px}
+  .contact-row{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:13px}
+  .foot-note{margin-top:18px;font-size:12px;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <span class="tag">FAISAL.SYED</span>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">Security Operations · Network Defense · Montgomery, AL (open to relocation &amp; remote)</div>
+    <h1>SOC analyst who treats every alert<br/>like it <span class="accent">matters</span>.</h1>
+    <p class="sub">I'm Faisal Ahamed Syed — M.S. in Cybersecurity (Auburn University at Montgomery, May 2026),
+    CompTIA Security+ certified. I triage real alerts, hunt real threats, and patch real endpoints —
+    not just lab simulations.</p>
+
+    <div class="feed" aria-hidden="true">
+      <span class="ln"><span class="k">[SIEM]</span> alert triaged — mapped to <span class="k">MITRE ATT&amp;CK T1566</span> … <span class="ok">escalated per SOC runbook ✓</span></span>
+      <span class="ln"><span class="k">[NESSUS]</span> scan 50+ endpoints — high-risk findings <span class="ok">▼ 30% after remediation</span></span>
+      <span class="ln"><span class="k">[HUNT]</span> fw/email/web logs — <span class="ok">10+ IOCs identified this week</span></span>
+      <span class="ln"><span class="k">[PDQ]</span> patch deploy 200+ devices — <span class="ok">patch lag ▼ 40%</span></span>
+      <span class="ln" id="typeline"><span class="k">[STATUS]</span> <span id="typed"></span><span class="cursor"></span></span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/faisal-syed-ahamed" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="btn btn-ghost" href="resume.pdf" download>Download résumé</a>
+    </div>
+  </div>
+
+  <section aria-label="Key metrics">
+    <div class="stats">
+      <div class="stat"><b>20+</b><span>alerts triaged daily in a live university SOC</span></div>
+      <div class="stat"><b>30%</b><span>reduction in high-risk vulnerabilities (Nessus program)</span></div>
+      <div class="stat"><b>500+</b><span>users supported on IAM / MFA under zero-trust policy</span></div>
+      <div class="stat"><b>40%</b><span>patch-lag reduction across 200+ endpoints</span></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-label">Experience</div>
+
+    <div class="role">
+      <div class="role-head">
+        <div><h3>Security Analyst Intern</h3><div class="org">Auburn University at Montgomery — Information Security Office</div></div>
+        <span class="when">Jan 2026 – May 2026</span>
+      </div>
+      <ul>
+        <li>Monitored and triaged 20+ SIEM alerts daily, mapping threat behaviors to MITRE ATT&amp;CK tactics to support real-time detection.</li>
+        <li>Ran Nessus vulnerability assessments across 50+ endpoints; remediation prioritization cut high-risk findings ~30%.</li>
+        <li>Hunted threats across firewall, email, and web logs — 10+ IOCs identified weekly, escalated per SOC procedure.</li>
+        <li>Deployed patches via PDQ to 200+ campus devices, reducing patch lag ~40%; supported EDR-aligned secure configuration.</li>
+        <li>Supported IAM operations — MFA enforcement and access control for 500+ enterprise users under zero-trust policy.</li>
+        <li>Documented 15+ incidents monthly with structured workflows consistent with SOAR playbook practices.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div><h3>IT Services Helpdesk Assistant</h3><div class="org">Auburn University at Montgomery</div></div>
+        <span class="when">Nov 2024 – Dec 2025</span>
+      </div>
+      <ul>
+        <li>Resolved Active Directory authentication and secure-access issues for 100+ users weekly within SLA.</li>
+        <li>Supported Duo MFA rollout for 500+ users; troubleshot wireless, DNS, and endpoint connectivity.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div><h3>QA Engineer</h3><div class="org">Buzops</div></div>
+        <span class="when">Jan 2023 – May 2024</span>
+      </div>
+      <ul>
+        <li>Built automated security test suites (Selenium, Playwright) covering SQLi, XSS, and CSRF across 5+ web apps — manual testing effort down ~40%.</li>
+        <li>Embedded Python test automation into CI/CD; partnered with security teams to remediate 20+ vulnerabilities per release cycle.</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <div><h3>Associate Quality Analyst</h3><div class="org">Tech Axis Group</div></div>
+        <span class="when">May 2022 – Dec 2022</span>
+      </div>
+      <ul>
+        <li>Owned manual test plans and end-to-end bug lifecycle in Jira; functional, smoke, and regression coverage across release cycles.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-label">Projects &amp; Labs</div>
+    <div class="grid2">
+
+      <div class="proj">
+        <h3>Home SIEM Detection Lab</h3>
+        <p>Splunk + Sysmon pipeline ingesting Windows and Linux telemetry. Custom correlation rules for credential
+        dumping, persistence, and lateral movement mapped to MITRE ATT&amp;CK; alert triage writeups included.</p>
+        <div class="chips"><span class="chip">Splunk</span><span class="chip">Sysmon</span><span class="chip">MITRE ATT&amp;CK</span><span class="chip">Detection Engineering</span></div>
+        <a class="repo" href="https://github.com/syedfaisal2407/siem-detection-lab" target="_blank" rel="noopener">github.com/syedfaisal2407/siem-detection-lab ↗</a>
+      </div>
+
+      <div class="proj">
+        <h3>Vulnerability Management Workflow</h3>
+        <p>End-to-end Nessus scan → risk-scored remediation queue → verification rescan, documented as a repeatable
+        runbook with Python parsing of scan exports into prioritized CSV reports.</p>
+        <div class="chips"><span class="chip">Nessus</span><span class="chip">Python</span><span class="chip">Risk Prioritization</span></div>
+        <a class="repo" href="https://github.com/syedfaisal2407/vuln-mgmt-workflow" target="_blank" rel="noopener">github.com/syedfaisal2407/vuln-mgmt-workflow ↗</a>
+      </div>
+
+      <div class="proj">
+        <h3>TryHackMe — SOC &amp; Blue Team Paths</h3>
+        <p>Hands-on log analysis, incident response, and Linux hardening. Adversary technique mapping during simulated
+        attacks; EDR triage and SOAR playbook logic for automated escalation and containment.</p>
+        <div class="chips"><span class="chip">IR</span><span class="chip">Linux Hardening</span><span class="chip">EDR</span><span class="chip">SOAR</span></div>
+        <a class="repo" href="https://tryhackme.com/p/syedfaisal2407" target="_blank" rel="noopener">tryhackme.com/p/syedfaisal2407 ↗</a>
+      </div>
+
+      <div class="proj">
+        <h3>Web App Security Test Automation</h3>
+        <p>Production experience from Buzops: Selenium/Playwright suites probing SQLi, XSS, and CSRF vectors,
+        wired into the SDLC pipeline so security defects were caught pre-deployment.</p>
+        <div class="chips"><span class="chip">OWASP Top 10</span><span class="chip">Playwright</span><span class="chip">CI/CD</span><span class="chip">Burp Suite</span></div>
+        <a class="repo" href="https://github.com/syedfaisal2407" target="_blank" rel="noopener">github.com/syedfaisal2407 ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-label">Skills Matrix</div>
+    <div class="skill-row"><div class="cat">Security Ops</div><div class="vals">SIEM monitoring &amp; alert triage · incident response &amp; escalation · threat hunting &amp; IOC analysis · MITRE ATT&amp;CK · EDR response · SOAR playbooks · zero trust · IAM / MFA</div></div>
+    <div class="skill-row"><div class="cat">Tools</div><div class="vals">Splunk · Nessus · PDQ · Wireshark · Burp Suite · Barracuda · Corelog · Spirion</div></div>
+    <div class="skill-row"><div class="cat">Networking</div><div class="vals">TCP/IP · DNS · VPN · firewalls · L2/L3 routing &amp; switching · OSPF · BGP · VLANs · STP</div></div>
+    <div class="skill-row"><div class="cat">Systems &amp; Code</div><div class="vals">Kali Linux · Ubuntu · Windows · Python · Bash · SQL</div></div>
+    <div class="skill-row"><div class="cat">Frameworks</div><div class="vals">OWASP Top 10 · vulnerability management · DMARC · secure SDLC</div></div>
+
+    <div style="margin-top:26px">
+      <div class="sec-label" style="margin-bottom:16px">Certifications</div>
+      <div class="certs">
+        <span class="cert">CompTIA Security+</span>
+        <span class="cert">Google Cybersecurity Professional</span>
+        <span class="cert pending">CCNA — in progress</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="sec-label" style="margin-bottom:18px">Contact</div>
+    <p style="max-width:560px;margin-bottom:18px">Open to SOC Analyst, Security Analyst, and Network Security roles.
+    Authorized to work in the U.S. (F-1 OPT, STEM-eligible cybersecurity degree).</p>
+    <div class="contact-row">
+      <a href="mailto:faisalahamed.syed@gmail.com">faisalahamed.syed@gmail.com</a>
+      <a href="https://www.linkedin.com/in/faisal-syed-ahamed" target="_blank" rel="noopener">linkedin/faisal-syed-ahamed</a>
+      <a href="https://github.com/syedfaisal2407" target="_blank" rel="noopener">github/syedfaisal2407</a>
+    </div>
+    <p class="foot-note">© 2026 Faisal Ahamed Syed · Built as a static site, no trackers, no frameworks.</p>
+  </div>
+</footer>
+
+<script>
+  // typed status line in the hero feed
+  (function(){
+    var msgs = [
+      "monitoring… open to SOC / Security Analyst roles",
+      "Security+ certified · CCNA in progress",
+      "M.S. Cybersecurity — Auburn University at Montgomery, 2026"
+    ];
+    var el = document.getElementById("typed");
+    if(!el) return;
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(reduce){ el.textContent = msgs[0]; return; }
+    var m = 0, i = 0;
+    function tick(){
+      var msg = msgs[m];
+      if(i <= msg.length){
+        el.textContent = msg.slice(0, i++);
+        setTimeout(tick, 38);
+      } else {
+        setTimeout(function(){ i = 0; m = (m + 1) % msgs.length; tick(); }, 2600);
+      }
+    }
+    tick();
+  })();
+</script>
+
+</body>
+</html>
